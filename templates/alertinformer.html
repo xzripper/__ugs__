@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <link rel="icon" type="image/x-icon" href="/static/icon.png">
+
     <link href="/static/index.css" rel="stylesheet">
 
     <title>Інформатор Ракет (УГШ).</title>
@@ -29,6 +31,8 @@
             <div class="div_center"><p>✅ {{ alert[0] }}</p></div>
         {% endif %}
     {% endfor %}
+
+    <div class="div_center"><button onclick="location.reload()">Обновити данні.</button></div><br>
 
     <div class="div_center"><button onclick="location.href = '/'">Назад.</button></div>
 </body>
