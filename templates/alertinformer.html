@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="/static/index.css" rel="stylesheet">
+
+    <title>Інформатор Ракет (УГШ).</title>
+</head>
+<body>
+    <div class="div_center"><h1>Остання інформація:</h1></div>
+
+    {% for rocket_alert in rocket_alerts %}
+        {% if rocket_alert[1] == 'NEGATIVE' %}
+            <div class="div_center"><p>🚨 {{ rocket_alert[0] }} ({{ rocket_alert[2] }}).</p></div>
+        {% else %}
+            <div class="div_center"><p>✅ {{ rocket_alert[0] }} ({{ rocket_alert[2] }}).</p></div>
+        {% endif %}
+    {% endfor %}
+
+    <div class="div_center"><h1>Останні данні про тривоги:</h1></div>
+
+    {% for alert in alerts %}
+        {% if not alert[1] %}
+            <div class="div_center"><p>🚨 {{ alert[0] }}</p></div>
+        {% else %}
+            <div class="div_center"><p>✅ {{ alert[0] }}</p></div>
+        {% endif %}
+    {% endfor %}
+
+    <div class="div_center"><button onclick="location.href = '/'">Назад.</button></div>
+</body>
+</html>

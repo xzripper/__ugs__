@@ -1,0 +1,3 @@
+SESSION = 'anon'
+API_ID = '20046537'
+API_HASH = '39cac6e62bff8d65c98b638cf7d81190'
